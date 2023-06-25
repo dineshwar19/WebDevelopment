@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="/cascading/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="frm">
+      <form action="new/index.html" method="get">
+        <h1>Login page</h1>
+        <div class="new">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="name"
+            id="name"
+            maxlength="10"
+            required
+          />
+        </div>
+        <div class="new">
+          <label for="DOB">DOB :</label>
+          <input
+            type="date"
+            name="DOB"
+            placeholder="DB"
+            id="DOB"
+            min="1990-01-01"
+            max="2003-05-19"
+            required
+          />
+        </div>
+        <div class="new">
+          <label for="email">EMAIL: </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            id="EMAIL"
+            required
+          />
+        </div>
+        <div class="new">
+          <label for="address">Address: </label>
+          <input type="text" name="address" id="address" required />
+        </div>
+        <div class="new">
+          <label for="phone">phone: </label>
+          <input type="tel" name="phone" id="phone" required />
+        </div>
+        <div class="new1">
+          <input type="radio" name="qualification" id="school" />
+          <label for="school">School</label>
+          <input type="radio" name="qualification" id="college" />
+          <label for="college">college</label>
+        </div>
+        <div>
+          <label for="gender">gender: </label>
+          <select name="gender" id="gender">
+            <option value="male">male</option>
+            <option value="female">female</option>
+          </select>
+        </div>
+        <div class="new">
+          <label for="pwd">Password: </label>
+          <input
+            type="password"
+            name="password"
+            id="pwd"
+            maxlength="6"
+            minlength="3"
+            required
+          />
+        </div>
+
+        <input
+          class="btn"
+          type="submit"
+          value="send"
+          name="submit"
+          id="submit"
+        />
+        <input class="btn" type="reset" name="reset" id="reset" />
+      </form>
+    </div>
+  </body>
+</html>
