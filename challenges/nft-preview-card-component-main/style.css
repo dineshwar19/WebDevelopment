@@ -1,0 +1,214 @@
+:root {
+  /* fonts */
+  --fraunces: "Fraunces",serif;
+  --outft: "Outfit",sans-serif;
+
+  --primary-blue: hsl(215, 51%, 70%);
+  --primary-cyan: hsl(178, 100%, 50%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(214, 26%, 36%);
+  --white: hsl(0, 0%, 100%);
+
+  /* font weights */
+  --fw-small:300;
+  --fw-normal:400;
+  --fw-bold:600;
+}
+
+/* 
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+body {
+  background-color: var(--main-bg);
+  display: grid;
+  place-content: center;
+  font-family: var(--outft);
+  font-weight: var(--fw-bold);
+  box-sizing: border-box;
+}
+.product {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 20px;
+  color: var(--line);
+  max-width: 375px;
+}
+
+
+.product__article {
+  padding: 1rem 0.2rem;
+  margin-top: 0.7rem;
+}
+.product__title a {
+  color: var(--white);
+  font-family: var( sans-serif);
+  text-decoration: none;
+  
+}
+.product__content{
+    margin-top: 1.5rem;
+    font-weight: 300;
+    color: var(--line);
+    font-size: .985rem;
+}
+.flex-grp{
+    display:inline-flex;
+    gap: 1rem;
+    margin:1rem 0 .7rem; 
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.bitcoin {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* justify-content: flex-start; */
+  font-size:1.1rem;
+  color: var(--primary-cyan);
+  font-weight: var(--fw-normal);
+  /* align-items: center; */
+  
+}
+.bitcoin[data-icon="icon"]::before{
+  content:" ";
+  background: url("images/icon-ethereum.svg");
+  width: 11px;
+  height:18px;
+  margin-right: 4px;
+}
+
+.days{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--fw-small);
+
+}
+.days[data-icon="clock"]::before{
+  content: " ";
+  width: 17px;
+  height: 17px;
+  background:url("images/icon-clock.svg");
+  margin-left:70px;
+  margin-right: 4px;
+}
+hr{
+  color: var(--line);
+  font-weight: var(--fw-small);
+}
+.product__creator{
+  margin-top:20px ;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: var(--fw-small);
+  
+}
+.product__creator img{
+  width: 29px;
+  margin-right: 14px;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+}
+.product__creator a{
+  text-decoration: none;
+  color: var(--white);
+  margin-left: 7px;
+}
+a:hover{
+  color: var(--primary-cyan);
+}
+.product__image img {
+  border-radius: 8px;
+  position: relative;
+  
+}
+
+.product__image div{
+  position:absolute;
+  bottom: 330px;
+  width: 315px;
+  height: 315px;
+  background-color:hsl(178, 100%, 50%,60%); ;
+  border-radius: 9px;
+  z-index: 999;  
+  opacity: 0;
+}
+.empty img{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.product__image div:hover{
+  opacity: 1;
+  cursor: pointer;
+}
