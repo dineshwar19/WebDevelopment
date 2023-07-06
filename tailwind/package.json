@@ -1,7 +1,6 @@
 {
   "name": "tailwind",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch",
@@ -12,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "prettier-plugin-tailwindcss": "^0.3.0"
-  }
+  },
+  "dependencies": {
+    "prettier": "^2.8.8"
+  },
+  "description": ""
 }
