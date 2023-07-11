@@ -1,0 +1,158 @@
+:root{
+    /* colors */
+    --paleblue:hsl(225, 100%, 94%);
+    --brightblue:hsl(245, 75%, 52%);
+    --neutralpaleblue:hsl(225, 100%, 98%);
+    --desaturatedblue:hsl(224, 23%, 55%);
+    --darkblue:hsl(223, 47%, 23%);
+
+    /* google fonts */
+    --font-fraunces: 'Fraunces', serif;
+    --font-redhat: 'Red Hat Display', sans-serif;
+
+    /* font weights */
+    --fw-small:500;
+    --fw-normal:700;
+    --fw-bold:900;
+}
+/* 
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+body{
+    background-color: var(--paleblue);
+    display: grid;
+    place-content:center;
+    box-sizing: border-box;
+    max-height: 100vh;
+}
+main{
+
+    margin: 1.5rem;
+    background-color: var(--neutralpaleblue);
+    border-radius: 1rem;
+    overflow: hidden;
+    max-width: 400px;
+}
+.content{
+    display: grid;
+    padding: 1.5rem;
+
+}
+.title{
+    font-family: var(--font-redhat);
+    font-weight: var(--fw-bold);
+    text-align: center;
+}
+.content__summary{
+    padding: 1.11rem;
+    text-indent: 1rem;
+    font-size: 16px;
+    font-family: var(--font-redhat);
+    font-weight: var(--fw-small);
+    color: var(--desaturatedblue);
+}
+.plan{
+    margin: .5rem -.2rem 1.3rem;
+    background-color:hsl(225, 100%, 94%,30%) ;
+    padding: .5rem;
+    border-radius: 1rem;
+    font-family: var(--font-redhat);
+    color: var(--desaturatedblue);
+}
+.plan b{
+    color: var(--darkblue);
+    font-weight: var(--fw-normal);
+}
+.plan a{
+    color: var(--brightblue);
+    font-weight: var(--fw-normal);
+    font-size: 15px;
+}
+.btn{
+    padding:.825rem ;
+    border-radius: 1rem;
+    color: var(--neutralpaleblue);
+    background-color: var(--brightblue);
+    border: none;
+    font-family: var(--font-redhat);
+    font-weight: var(--fw-bold);
+    box-shadow: 0rem 1rem 1rem var(--paleblue);
+}
+.cancel{
+    text-align: center;
+    padding: 1rem;
+    margin-top:1rem ;
+    font-family: var(--font-redhat);
+    font-weight: var(--fw-bold);
+    color: var(--desaturatedblue);
+}
+.cancel:hover{
+    cursor: pointer;
+    color: var(--darkblue);
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: hsl(245, 73%, 61%);
+}
+a:hover{
+    color: hsl(245, 73%, 61%);
+}
