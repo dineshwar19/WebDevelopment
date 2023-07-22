@@ -1,0 +1,18 @@
+.container{
+    background: linear-gradient(to right,rgb(0, 145, 255),rgb(0, 128, 55));
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    border: 5px solid white;
+    padding: 20px;
+    font-size: 40px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.ampm{
+    font-size: 25px;
+}
