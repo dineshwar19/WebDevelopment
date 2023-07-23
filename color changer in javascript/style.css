@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height:70px;
+  background:linear-gradient(to right,gray,black);
+  color:white;
+}
+
+.colorChanger{
+ 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: #ff1033;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: green;
+}
