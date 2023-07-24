@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="turnOn">turn on the light</button>
+    <img src="pic_bulboff.gif" alt="bulbOff" id="bulb">
+    <button id="turnOff">turn off the light</button>
+</body>
+<script>
+    "use strict"
+    let turnOn = document.getElementById("turnOn");
+    let turnOff = document.getElementById("turnOff");
+    let bulb = document.getElementById("bulb");
+
+    turnOn.addEventListener('click',()=>{
+        document.getElementById('bulb').src='pic_bulbon.gif';
+    });
+    turnOff.addEventListener('click',()=>{
+        document.getElementById('bulb').src = 'pic_bulboff.gif';
+    })
+    console.log(document.applets)
+</script>
+</html>
