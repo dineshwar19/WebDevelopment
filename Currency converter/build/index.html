@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>currency converter</title>
+</head>
+<body class="flex justify-center bg-gray-700 items-center min-h-screen">
+    
+    <section class="bg-blue-600 text-white rounded-2xl p-10  ">
+        <h1 class="text-center font-extrabold text-2xl">currency Converter</h1>
+        <div class="flex  gap-5  my-10 text-black">
+            <select name="" id="" class="w-1/2 p-2 "></select>
+            <select name="" id="" class="w-1/2 p-2"></select>
+        </div>
+        <div class="my-5">
+            <input type="number" name="" id="" class=" p-2 border border-black text-black">
+            <input type="number" name="" id="" class="p-2 border border-black text-black">
+        </div>
+        <div class="flex justify-center "><button id="btn" class="bg-black w-20 p-2 rounded-2xl ">convert</button></div>
+    </section>
+        
+</body>
+<script>
+    let select = document.querySelectorAll('select');
+    fetch('https://api.frankfurter.app/currencies')
+    .then(res => res.json())
+    
+    .then(val => dropDown(val))
+
+    function dropDown(val){
+        let currencyArray = Object.entries(val)
+        for(let i = 0 ; i < currencyArray.length ; i++){
+            let opt = `<option value="${currencyArray[i][0]}">${currencyArray[i][0]}</option>`
+            select[0].innerHTML += opt;
+            select[1].innerHTML += opt;
+        }
+    }
+    
+    let btn = document.getElementById("btn");
+    
+    btn.addEventListener('click',()=>{
+        let cur1 = select[0].value;
+        let cur2 = select[1].value;
+        let inputValue = document.querySelectorAll('input')[0].value;
+        if(cur1 === cur2){
+            let elm = document.createElement('h1');
+            elm.innerHTML= "*choose different languages"
+            document.querySelector('section').appendChild(elm);
+        }
+        else{
+          convert(cur1,cur2,inputValue);
+        }
+    })
+    function convert(cur1,cur2,inputValue) {
+        const host = 'api.frankfurter.app';
+        fetch(`https://${host}/latest?amount=${inputValue}&from=${cur1}&to=${cur2}`)
+        .then(resp => resp.json())
+        .then((data) => {
+            let amt = Object.values(data.rates)
+            document.querySelectorAll('input')[1].value = amt[0];
+        
+  });
+    }
+    
+</script>
+</html>
