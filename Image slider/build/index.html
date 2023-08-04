@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>image slider</title>
+</head>
+<body class="flex justify-center items-center min-h-screen">
+    <a href="" class="btn-left text-white p-3 rounded-full bg-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+      </svg>
+      </a>
+      <div class=" max-w-lg border-4 border-blue-500  rounded-md "><img src= class="" alt=""></div>
+      <a href="" class=" btn-right text-white p-3 rounded-full bg-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+      </svg>
+      </a>
+</body>
+<script>
+  let button = document.querySelectorAll('a');
+  let displayer = document.querySelector('img');
+  let index = 0;
+  const images = ["naruto1","jiraya","rocklee"];
+  // console.log(images[index])
+  button.forEach((btn)=>{
+    btn.addEventListener('click',(event)=>{
+      event.preventDefault();
+      if(btn.classList.contains('btn-left')){
+        index--;
+        
+        if(index<0){
+          index = images.length-1;
+          
+        }
+        displayer.src = `/assets/images/${images[index]}.jpeg`
+      }
+      else{
+        index++;
+        if(index>images.length-1){
+          index = 0;
+        }
+        displayer.src = `/assets/images/${images[index]}.jpeg`
+      }
+    })
+  })
+</script>
+</html>
