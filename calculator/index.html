@@ -11,27 +11,27 @@
         <table>
             <tr>
                 <td colspan="3"><input type="text" name="result" id="result" readonly></td>
-                <td><input type="button" class="clear" value="C"></td>
+                <td><input type="button" class="clear" id="clear" value="C"></td>
             </tr>
         </table>
         <div class="keys">
-            <input type="button" class="button" id = "button" 
-            value="7">
-            <input type="button" class="button" value="8">
-            <input type="button" class="button" value="9">
-            <input type="button" class="operator" value="/">
-            <input type="button" class="button" value="4">
-            <input type="button" class="button" value="5">
-            <input type="button" class="button" value="6">
-            <input type="button" class="operator" value="*">
-            <input type="button" class="button" value="1">
-            <input type="button" class="button" value="2">
-            <input type="button" class="button" value="3">
-            <input type="button" class="operator" value="-">
-            <input type="button" class="button" value="0">
-            <input type="button" class="button" value=".">
-            <input type="button" class="operator" value="=">
-            <input type="button" class="operator" value="+">
+            <input type="button" class="button" value="7" onclick="display(this.value)">
+            <input type="button" class="button" value="8" onclick="display(this.value)">
+            <input type="button" class="button" value="9" onclick="display(this.value)">
+            <input type="button" class="operator" value="/" onclick="display(this.value)">
+            <input type="button" class="button" value="4" onclick="display(this.value)">
+            <input type="button" class="button" value="5" onclick="display(this.value)">
+            <input type="button" class="button" value="6" onclick="display(this.value)">
+            <input type="button" class="operator" value="*" onclick="display(this.value)">
+            <input type="button" class="button" value="1" onclick="display(this.value)">
+            <input type="button" class="button" value="2" onclick="display(this.value)">
+            <input type="button" class="button" value="3" onclick="display(this.value)">
+            <input type="button" class="operator" value="-" onclick="display(this.value)">
+            <input type="button" class="button" value="0" onclick="display(this.value)">
+            <input type="button" class="button" value="." onclick="display(this.value)">
+            <input type="button" class="operator" value="=" onclick="operation()">
+            <input type="button" class="operator" value="+" onclick="display(this.value)">
+            <!-- <input type="button" value="&Sqrt;" onclick="display(this.value)"> -->
         </div>
     </main>
 </body>

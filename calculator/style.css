@@ -31,7 +31,7 @@ main{
 }
 .button{
     background-color:#CEDEBD ;
-    transition: font-size .5s ease;
+    
     
 }
 .operator{
@@ -39,11 +39,11 @@ main{
 }
 .clear{
     background-color: #F0B86E;
+    cursor: pointer;
 }
 input:hover.button {
     background-color: #A8DF8E;
     cursor: pointer;
-    font-size: 30px;
 }
 input:hover.operator {
     background-color: #F6635C;

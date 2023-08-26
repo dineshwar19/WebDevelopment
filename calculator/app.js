@@ -1,5 +1,12 @@
 const screen = document.getElementById("result");
-const buttons = document.getElementById("button");
-buttons.addEventListener('click' , ()=>{
-
+function display(val){
+    screen.value += val;
 }
+function operation(){
+    let op = eval(screen.value);
+    screen.value = op;
+}
+const clear = document.getElementById("clear");
+clear.addEventListener('click',()=>{
+        screen.value = " ";
+})
