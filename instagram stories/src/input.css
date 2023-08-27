@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .plus {
+    @apply absolute right-0 bottom-0 text-white bg-blue-700 font-semibold  rounded-full text-2xl w-8 h-8 text-center border-4 border-white font-mono flex justify-center items-center hover:bg-blue-900;
+  }
+}
