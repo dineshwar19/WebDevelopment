@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Free advice</title>
+</head>
+<body>
+    <div class="container">
+        <p>Need some advice click here</p>
+        <button>click</button>
+        <div id="result"></div>
+    </div>
+</body>
+<script>
+    let button = document.querySelector("button");
+    button.innerHTML = "Advice me"
+    let result = document.getElementById("result");
+    button.addEventListener('click' , () =>{
+       
+        let rand = Math.floor(Math.random()*200)
+        fetch(`	https://api.adviceslip.com/advice/${rand}`)
+        .then(res => res.json())
+        .then(val => {
+            result.style.display = "inline";
+            result.innerHTML = `<div> Advice no. ${rand} </div>` +val.slip.advice;
+        })
+    })
+</script>
+</html>
