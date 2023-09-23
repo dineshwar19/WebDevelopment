@@ -18,7 +18,7 @@ function Use_Reducer2() {
   const [email, setEmail] = useState("");
   const [state, dispatch] = useReducer(reducer, initialState);
   function addData(e) {
-    e.preventDefault();
+    e.preventDefault(); 
     setName("");
     setEmail("");
     const data = {
