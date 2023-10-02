@@ -4,7 +4,9 @@ function App() {
   const [item, setItem] = useState("");
   const [list, setList] = useState(() => {
     const storedList = localStorage.getItem('task');
+    console.log(storedList)
     return storedList ? JSON.parse(storedList) : [];
+    
   });
 
   useEffect(() => {
