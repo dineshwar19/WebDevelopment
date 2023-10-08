@@ -3,7 +3,7 @@ import Images from "./components/Images";
 import SearchImage from "./components/SearchImage";
 function App() {
   const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("");
 
   useEffect(() => {
@@ -22,9 +22,11 @@ function App() {
   return (
     <div className="bg-slate-800 container lg:mx-auto ">
       <SearchImage searchImage={(text) => setTerm(text)} />
-      {!isLoading && images.length === 0 && <h1 className="  text-white text-center mt-32 mx-auto text-5xl">
+      {!isLoading && images.length === 0 && (
+        <h1 className="  text-white text-center mt-32 mx-auto text-5xl">
           No Result Found!!!
-        </h1> }
+        </h1>
+      )}
       {isLoading ? (
         <h1 className="text-white text-center mt-32 mx-auto text-5xl">
           Loading...
