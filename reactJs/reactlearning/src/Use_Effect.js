@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState(3600);
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
@@ -11,9 +11,7 @@ function App() {
       intervalId = setInterval(() => {
         setTime((prevTime) => prevTime + 1);
       }, 1000);
-    } else {
-      clearInterval(intervalId);
-    }
+    } 
 
     return () => {
       clearInterval(intervalId);
