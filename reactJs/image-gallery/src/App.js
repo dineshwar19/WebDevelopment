@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://pixabay.com/api/?key=39791508-257fe833aa3f604c10b1b17c6&q=${term}&image_type=photo&pretty=true`
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&q=${term}&image_type=photo&pretty=true`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -19,8 +19,9 @@ function App() {
         console.log(err);
       });
   }, [term]);
+
   return (
-    <div className="bg-slate-800 container lg:mx-auto ">
+    <div className="bg-slate-800  lg:mx-auto ">
       <SearchImage searchImage={(text) => setTerm(text)} />
       {!isLoading && images.length === 0 && (
         <h1 className="  text-white text-center mt-32 mx-auto text-5xl">
@@ -33,8 +34,8 @@ function App() {
         </h1>
       ) : (
         <div className=" md:grid grid-cols-3 gap-4  sm: flex flex-col align-middle justify-center min-h-screen p-5 gap-6 ">
-          {images.map((image) => (
-            <Images key="{image.id}" image={image} />
+          {images.map((image, index) => (
+            <Images key={index} image={image} />
           ))}
         </div>
       )}
