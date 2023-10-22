@@ -41,7 +41,7 @@ function App() {
           onChange={(e) => setName(e.target.value)}
         />
         <input
-          type="text"
+          type="email"
           placeholder="Email"
           className="border-2 border-black p-5 rounded-xl text-xl font-semibold outline-none"
           value={email}

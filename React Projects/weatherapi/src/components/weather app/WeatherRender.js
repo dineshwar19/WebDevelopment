@@ -1,7 +1,6 @@
 import React from "react";
 import humidity from "../assets/humidity.png";
 import wind from "../assets/wind.png";
-import Search from "./Search";
 const WeatherRender = ({ data }) => {
   return (
     <div>

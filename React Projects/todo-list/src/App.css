@@ -8,15 +8,14 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: rgb(155, 174, 255);
+  background:rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
-    rgba(155, 174, 255, 1) 0%,
-    rgba(255, 142, 165, 1) 26%,
-    rgba(251, 196, 160, 1) 50%,
-    rgba(220, 255, 158, 1) 73%,
-    rgba(127, 250, 255, 1) 100%
-  );
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 28%,
+    rgba(0, 212, 255, 1) 100%
+  ); ;
+  
   align-items: center;
   place-content: center;
 }

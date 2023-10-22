@@ -3,7 +3,11 @@ import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import WhatIDo from "./components/WhatIDo";
+import Experience from "./components/Experience";
+import Passion from "./components/Passion";
+import SocialLinks from "./components/SocialLinks";
+import Contact from "./components/Contact";
+import SocialFooter from "./components/SocialFooter";
 
 function App() {
   return (
@@ -11,8 +15,12 @@ function App() {
       <NavBar />
       <Header />
       <About />
-      <WhatIDo />
+      <SocialLinks />
+      <Passion />
       <Skills />
+      <Experience />
+      <Contact />
+      <SocialFooter />
     </div>
   );
 }
