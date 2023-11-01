@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cc474a91.css",
+    "main.js": "/static/js/main.1b9afc5e.js",
+    "static/media/experience.jpg": "/static/media/experience.8bdcf97b13ac7f2c5c04.jpg",
+    "static/media/about.jpg": "/static/media/about.331eba257477aa88bf70.jpg",
+    "static/media/smallLander.jpg": "/static/media/smallLander.c748a695e8d295713576.jpg",
+    "static/media/ImageGallery.png": "/static/media/ImageGallery.6e90252565966361b368.png",
+    "static/media/lander1.jpg": "/static/media/lander1.a6f431514478aeceda53.jpg",
+    "static/media/Dinesh.jpeg": "/static/media/Dinesh.02b8ef557948223b2fcd.jpeg",
+    "static/media/react.png.png": "/static/media/react.png.becbab0ab5d2271d2831.png",
+    "static/media/tailwind.png.png": "/static/media/tailwind.png.fdec46372df17366cc1c.png",
+    "static/media/java.png.png": "/static/media/java.png.4e332879122f609caa57.png",
+    "static/media/WeatherIndia.png": "/static/media/WeatherIndia.0382a9cf33e5971724f7.png",
+    "static/media/html.png.png": "/static/media/html.png.f3aa7827cd5160f3fc1c.png",
+    "static/media/TodoList.png": "/static/media/TodoList.05c6307c8ba3dba1d635.png",
+    "static/media/js.png.png": "/static/media/js.png.76536eb2b86398277df3.png",
+    "static/media/css.png.png": "/static/media/css.png.1334cb45a7d5ad096543.png",
+    "static/media/snakeGame.png": "/static/media/snakeGame.f297b5d1d869c943bcc3.png",
+    "static/media/background.jpg": "/static/media/background.371f6a2be3b216a4b087.jpg",
+    "static/media/git.png.png": "/static/media/git.png.69ffd9cd5a846c976177.png",
+    "index.html": "/index.html",
+    "main.cc474a91.css.map": "/static/css/main.cc474a91.css.map",
+    "main.1b9afc5e.js.map": "/static/js/main.1b9afc5e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc474a91.css",
+    "static/js/main.1b9afc5e.js"
+  ]
+}

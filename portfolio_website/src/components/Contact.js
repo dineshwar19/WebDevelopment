@@ -16,7 +16,7 @@ const Contact = () => {
   };
   return (
     <div className="p-10 relative" id="contact">
-      <div className="hidden md:flex justify-left absolute h-full w-full left-0 top-0">
+      <div className="hidden md:flex justify-left absolute h-full left-0 top-0">
         <div
           className="bg-fixed bg-cover bg-no-repeat w-40"
           style={{ backgroundImage: `url(${white})` }}
