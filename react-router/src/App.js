@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // import Todos from "./components/Todos";
 // import Buttons from "./components/JsonPlaceholder.js/Buttons";
 // import Challenge from "./components/challenge/Challenge";
-import api from "./api/posts";
+
 import Nav from "./components/react_router_project/Nav";
 
 import { Route, Routes, Link } from "react-router-dom";
@@ -22,91 +22,10 @@ import EditPage from "./components/react_router_project/EditPage";
 // import SkillPage from "./components/react-router/SkillPage";
 // import Missing from "./components/react-router/Missing";
 // import SkillsLayout from "./components/react-router/SkillsLayout";
-
+import { DataProvider } from "./contexts/DataContext";
 function App() {
   // const [len, setLen] = useState(0);
-  const [search, setSearch] = useState("");
-  const [postTitle, setPostTitle] = useState("");
-  const [postBody, setPostBody] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
-  const navigation = useNavigate();
-  const [posts, setPosts] = useState([]);
-  const [editTitle, setEditTitle] = useState("");
-  const [editBody, setEditBody] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await api.get("/posts");
-        setPosts(response.data);
-      } catch (err) {
-        if (err.response) {
-          console.log(err.response.data);
-        }
-      }
-    };
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const filteredPost = posts.filter(
-      (post) =>
-        post.title.toLowerCase().includes(search.toLowerCase()) ||
-        post.body.toLowerCase().includes(search.toLowerCase())
-    );
-    setSearchResult(filteredPost.reverse());
-  }, [search, posts]);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const id = posts.length ? posts.length + 1 : 1;
-    if (postTitle === "" || postBody === "") return;
-    const updatedPost = { id: id, title: postTitle, body: postBody };
-
-    try {
-      const response = await api.post("/posts", updatedPost);
-      const updatedPosts = [...posts, response.data];
-      setPosts(updatedPosts);
-      setPostTitle("");
-      setPostBody("");
-      navigation("/");
-    } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-      }
-    }
-  };
-
-  const handleEdit = async (e, id) => {
-    e.preventDefault();
-    if (editBody === "" || editTitle === "") return;
-    const editedPost = { id, title: editTitle, body: editBody };
-    try {
-      const response = await api.put(`/posts/${id}`, editedPost);
-      setPosts(
-        posts.map((post) => (post.id === id ? { ...response.data } : post))
-      );
-      setPostTitle("");
-      setPostBody("");
-      navigation("/");
-    } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-      }
-    }
-  };
-
-  const handleDelete = async (id) => {
-    const deletedPost = posts.filter((post) => post.id !== id);
-    try {
-      const response = await api.delete(`/posts/${id}`);
-    } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-      }
-    }
-    setPosts(deletedPost);
-    navigation("/");
-  };
   return (
     // <div className="flex flex-col h-screen ">
     //   <Header />
@@ -141,45 +60,21 @@ function App() {
     //   </Routes>
     // </div>
     <div>
-      <Nav search={search} setSearch={setSearch} />
+      <DataProvider>
+        <Nav />
 
-      <Routes>
-        <Route path="/" element={<Home posts={searchResult} />} />
-        <Route path="/post">
-          <Route
-            index
-            element={
-              <NewPost
-                postTitle={postTitle}
-                postBody={postBody}
-                setPostTitle={setPostTitle}
-                setPostBody={setPostBody}
-                handleSubmit={handleSubmit}
-              />
-            }
-          />
-          <Route
-            path=":id"
-            element={<PostPage posts={posts} handleDelete={handleDelete} />}
-          />
-        </Route>
-        <Route
-          path="/edit/:id"
-          element={
-            <EditPage
-              posts={posts}
-              editTitle={editTitle}
-              editBody={editBody}
-              setEditTitle={setEditTitle}
-              setEditBody={setEditBody}
-              handleEdit={handleEdit}
-            />
-          }
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<Missing />} />
-      </Routes>
-      <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/post">
+            <Route index element={<NewPost />} />
+            <Route path=":id" element={<PostPage />} />
+          </Route>
+          <Route path="/edit/:id" element={<EditPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Missing />} />
+        </Routes>
+        <Footer />
+      </DataProvider>
     </div>
   );
 }

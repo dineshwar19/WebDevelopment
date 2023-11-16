@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataContext from "../../contexts/DataContext";
 
-const NewPost = ({ postTitle, postBody, setPostTitle, setPostBody, handleSubmit }) => {
+const NewPost = () => {
+  const { postTitle, postBody, setPostTitle, setPostBody, handleSubmit } = useContext(DataContext);
   return (
     <div>
       <form action="" className="flex flex-col w-fit p-3 gap-3 items-center" onSubmit={handleSubmit}>

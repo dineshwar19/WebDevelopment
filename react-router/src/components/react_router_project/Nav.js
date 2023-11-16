@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-const Nav = ({ search , setSearch }) => {
+import DataContext from "../../contexts/DataContext";
+const Nav = () => {
+  const {search , setSearch} = useContext(DataContext);
   return (
     <nav className="bg-blue-600 text-white p-3 text-center flex flex-col gap-4">
       <h1 className="text-2xl font-semibold">My Social Media</h1>

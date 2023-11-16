@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import DataContext from "../../contexts/DataContext";
 
-const EditPage = ({
-  posts,
-  editTitle,
-  editBody,
-  setEditTitle,
-  setEditBody,
-  handleEdit,
-}) => {
+const EditPage = () => {
+  const { posts, editTitle, editBody, setEditTitle, setEditBody, handleEdit } =
+    useContext(DataContext);
   const { id } = useParams();
   const post = posts.find((post) => post.id.toString() === id);
   useEffect(() => {
@@ -22,7 +18,7 @@ const EditPage = ({
       <form
         action=""
         className="flex flex-col w-fit p-3 gap-3 items-center"
-        onSubmit={(e) => handleEdit(e,id)}
+        onSubmit={(e) => handleEdit(e, id)}
       >
         <div className="flex flex-col w-full">
           <label htmlFor="title">Post Title : </label>
