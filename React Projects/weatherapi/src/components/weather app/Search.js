@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { CiSearch } from "react-icons/ci";
-import search from "../assets/search.png";
 function Search({searchLocation}) {
   const [location,setLocation] = useState("");
   function handleClick(e){
