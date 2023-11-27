@@ -5,7 +5,7 @@ const Images = ({ image }) => {
   return (
     <div>
       <div className="max-w-sm shadow-lg rounded overflow-hidden bg-white">
-        <img src={image.webformatURL} alt="" className = "w-full" />
+        <img loading="lazy" src={image.webformatURL} alt="" className = "w-full" />
         <div className="p-4">
           <div className="font-semibold text-green-400 text-xl mb-2">
             Photo by {image.user}

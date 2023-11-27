@@ -33,7 +33,7 @@ function App() {
           Loading...
         </h1>
       ) : (
-        <div className=" md:grid grid-cols-3 gap-4  sm: flex flex-col align-middle justify-center min-h-screen p-5 gap-6 ">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center min-h-screen p-5 gap-6 ">
           {images.map((image, index) => (
             <Images key={index} image={image} />
           ))}
