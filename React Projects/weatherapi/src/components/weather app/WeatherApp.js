@@ -12,7 +12,7 @@ function WeatherApp() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${loca}&aqi=no`
+          `https://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${loca}&aqi=no`
         );
         if (!response.ok) {
           throw new Error("Weather is not available");
