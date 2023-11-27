@@ -27,11 +27,11 @@ function WeatherApp() {
       }
     };
     fetchData();
-  }, [loca]);
+  }, [loca, APIKEY]);
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-r from-violet-500 via-violet-600 to-fuchsia-700">
-      <div className="bg-white bg-opacity-25  p-10 rounded-lg flex bg-f flex-col items-center shadow-2xl">
+    <div className="md:flex md:flex-col md:min-h-screen md:items-center justify-center bg-gradient-to-r from-violet-500 via-violet-600 to-fuchsia-700 ">
+      <div className="bg-white bg-opacity-25 p-10 rounded-lg flex bg-f flex-col items-center shadow-2xl min-h-screen">
         <Search searchLocation={(text) => setLoca(text)} />
         {isLoading ? (
           <p className="text-white text-2xl font-bold my-10">Loading...</p>

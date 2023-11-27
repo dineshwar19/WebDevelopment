@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CiSearch } from "react-icons/ci";
 import search from "../assets/search.png";
 function Search({searchLocation}) {
   const [location,setLocation] = useState("");
@@ -9,7 +10,7 @@ function Search({searchLocation}) {
 
   }
   return (
-    <div className="flex justify-center gap-5">
+    <div className="flex items-center gap-5">
           <input
             type="text"
             placeholder="Search"
@@ -17,12 +18,9 @@ function Search({searchLocation}) {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          <img
-            src={search}
-            alt="search"
-            className="bg-white w-14 p-4 rounded-2xl cursor-pointer"
-            onClick={handleClick}
-          />
+          <div className='bg-white p-3 rounded-full cursor-pointer' onClick={handleClick}>
+            <CiSearch size={30} />
+          </div>
         </div>
   )
 }
