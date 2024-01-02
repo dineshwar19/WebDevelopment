@@ -1,12 +1,12 @@
 const http = require("http");
-const url = require("url");
+// const url = require("url");
 const fs = require("fs");
 
 http
   .createServer(function (req, res) {
-    const q = url.parse(req.url, true);
+    // const q = url.parse(req.url, true);
     // req.url -> /summer.html
-    const filename = "." + q.pathname;
+    const filename = "." + req.url;
     //filename -> ./summer.html
     fs.readFile(filename, function (err, data) {
       if (err) {
