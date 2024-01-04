@@ -16,6 +16,7 @@
     "concat-map": "^0.0.1",
     "debug": "^4.3.4",
     "fill-range": "^7.0.1",
+    "formidable": "^3.5.1",
     "glob-parent": "^5.1.2",
     "has-flag": "^3.0.0",
     "ignore-by-default": "^1.0.1",
@@ -41,8 +42,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node demo.js",
-    "dev" : "nodemon demo"
+    "start": "node demo.js",
+    "dev": "nodemon demo"
   },
   "author": "",
   "license": "ISC",

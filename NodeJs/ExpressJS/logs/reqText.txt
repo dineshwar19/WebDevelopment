@@ -1,0 +1,18 @@
+GET	/
+GET	/index.css
+GET	/new-page
+GET	/new
+GET	/new1.html
+GET	/new1.html	undefined
+GET	/	undefined
+GET	/	undefined
+GET	/	undefined
+GET	/	https://www.google.com
+GET	/	https://www.google.com
+GET	/	undefined
+GET	/index.css	undefined
+GET	/	undefined
+GET	/index.css	undefined
+GET	/favicon.ico	undefined
+GET	/index	undefined
+GET	/index.css	undefined
