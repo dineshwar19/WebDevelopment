@@ -2,9 +2,9 @@ const path = require("path");
 const fs = require("fs");
 const fsPromises = require("fs").promises;
 
-const logEvents = async (message, fileName = "resText.txt") => {
+const logEvents = async (message, fileName = "reqText.txt") => {
   try {
-    const logsDirectory = path.join(__dirname, "logs");
+    const logsDirectory = path.join(__dirname, "..", "logs");
 
     if (!fs.existsSync(logsDirectory)) {
       await fsPromises.mkdir(logsDirectory, { recursive: true });

@@ -1,6 +1,0 @@
-GET	/index	undefined
-GET	/index	undefined
-GET	/index	undefined
-GET	/index.css	undefined
-GET	/index	undefined
-GET	/index.css	undefined
