@@ -1,0 +1,30 @@
+GET http://localhost:8000/employees
+
+###
+
+POST http://localhost:8000/employees
+Content-Type: application/json
+
+{
+    "firstName" : "Dineshwar",
+    "lastName" : "s"
+}
+###
+
+PUT http://localhost:8000/employees
+Content-Type: application/json
+
+{
+    "id" : 3,
+    "firstName" : "Dineshwar",
+    "lastName" : "sddd"
+}
+
+###
+
+DELETE http://localhost:8000/employees
+Content-Type: application/json
+
+{
+    "id" : 4
+}

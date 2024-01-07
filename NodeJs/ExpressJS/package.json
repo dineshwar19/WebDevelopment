@@ -6,12 +6,12 @@
     "nodemon": "^3.0.2"
   },
   "scripts": {
-    "start": "node routing.js",
-    "dev": "nodemon routing"
+    "start": "node index.js",
+    "dev": "nodemon index"
   },
   "name": "expressjs",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "routing.js",
   "author": "",
   "license": "ISC",
   "description": ""
