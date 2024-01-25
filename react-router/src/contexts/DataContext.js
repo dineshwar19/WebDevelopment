@@ -64,6 +64,7 @@ export const DataProvider = ({ children }) => {
       setPosts(
         posts.map((post) => (post.id === id ? { ...response.data } : post))
       );
+      console.log("clicked");
       setPostTitle("");
       setPostBody("");
       navigation("/");

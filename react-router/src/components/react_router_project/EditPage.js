@@ -12,11 +12,10 @@ const EditPage = () => {
       setEditTitle(post.title);
       setEditBody(post.body);
     }
-  }, []);
+  }, [post , setEditBody , setEditTitle]);
   return (
     <div>
       <form
-        action=""
         className="flex flex-col w-fit p-3 gap-3 items-center"
         onSubmit={(e) => handleEdit(e, id)}
       >

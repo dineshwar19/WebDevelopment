@@ -1,21 +1,24 @@
-import { useEffect, useState } from "react";
-// import Footer from "./components/Footer";
-// import Header from "./components/Header";
-// import Todos from "./components/Todos";
+// import {useEffect ,  useState } from "react";
+// import Header from "./components/todosWIthApiFetch/Header";
+// import Footer from "./components/todosWIthApiFetch/Footer"
+// import Todos from "./components/todosWIthApiFetch/Todos";
+
 // import Buttons from "./components/JsonPlaceholder.js/Buttons";
 // import Challenge from "./components/challenge/Challenge";
 
 import Nav from "./components/react_router_project/Nav";
-
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./components/react_router_project/Home";
 import NewPost from "./components/react_router_project/NewPost";
 import PostPage from "./components/react_router_project/PostPage";
 import About from "./components/react_router_project/About";
 import Footer from "./components/react_router_project/Footer";
 import Missing from "./components/react_router_project/Missing";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import EditPage from "./components/react_router_project/EditPage";
+
+
+
 // import Home from "./components/react-router/Home";
 // import About from "./components/react-router/About";
 // import Skills from "./components/react-router/Skills";
@@ -23,6 +26,7 @@ import EditPage from "./components/react_router_project/EditPage";
 // import Missing from "./components/react-router/Missing";
 // import SkillsLayout from "./components/react-router/SkillsLayout";
 import { DataProvider } from "./contexts/DataContext";
+
 function App() {
   // const [len, setLen] = useState(0);
 
@@ -32,19 +36,22 @@ function App() {
     //   <Todos setLen={setLen} />
     //   <Footer len={len} />
     // </div>
+
+
     // <div>
     //   <Challenge />
     // </div>
     // <div>
     //   <Buttons />
     // </div>
+
+
     // <div>
     //   <nav>
     //     <ul className="flex bg-blue-500 text-white justify-evenly">
     //       <li><Link to="/">Home</Link></li>
     //       <li><Link to="/about">About</Link></li>
     //       <li><Link to="/skills">Skills</Link></li>
-
     //     </ul>
     //   </nav>
     //   <Routes>
@@ -59,10 +66,11 @@ function App() {
     //     <Route path="*" element={<Missing />} />
     //   </Routes>
     // </div>
-    <div>
+    // <div>
+
+
       <DataProvider>
         <Nav />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/post">
@@ -75,7 +83,7 @@ function App() {
         </Routes>
         <Footer />
       </DataProvider>
-    </div>
+    // </div>
   );
 }
 

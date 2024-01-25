@@ -16,6 +16,6 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-//to check there if is same directory is present in that path .. use fs.existsync
+//to check there is a same directory is present in that path - use fs.existsync
 //to create directory mkdir
 //to remove directory rmdir

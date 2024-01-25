@@ -1,6 +1,7 @@
 const fs = require("fs"); // to include file system module.
 const path = require("path"); // to eliminate hardcore path reference.
-//all the process work asynchronously . It create confusions. so use callback method
+const http = require("http");
+
 //to read file from a computer
 // fs.readFile(path.join(__dirname, "Files", "new.txt"), "utf8", (err, data) => {
 //   if (err) throw err;
@@ -49,6 +50,8 @@ const path = require("path"); // to eliminate hardcore path reference.
 //   console.log("deleted");
 // });
 
+//the above processess work asynchronously . It create confusions. so use callback method.(if the operations execute without callback it change the order of execution because of asynchronous.)
+
 // callback method
 // fs.readFile(path.join(__dirname, "Files", "new.txt"), "utf8", (err, data) => {
 //   if (err) throw err;
@@ -87,7 +90,7 @@ const path = require("path"); // to eliminate hardcore path reference.
 //   );
 // });
 
-// process.on("uncaughtException", (err) => {
+// process.on("uncaughtException", (err) => { //it is used to catch the error thrown by the above program.
 //     console.log(`There was an unCaught error: ${err}`);
 //     process.exit(1);
 //   });
@@ -98,11 +101,6 @@ const path = require("path"); // to eliminate hardcore path reference.
 const fsPromises = require("fs").promises;
 const fsOperations = async () => {
   try {
-    const data = await fsPromises.readFile(
-      path.join(__dirname, "Files", "new.txt"),
-      "utf8"
-    );
-    console.log(data);
     await fsPromises.writeFile(
       path.join(__dirname, "Files", "new.txt"),
       "hello world full of surprises..."
@@ -113,11 +111,25 @@ const fsOperations = async () => {
       " hey you r my world raa..."
     );
     console.log("appended");
-    fsPromises.rename(
-      path.join(__dirname, "Files", "new.txt"),
-      path.join(__dirname, "Files", "renamed.txt")
-    );
-    console.log("renamed");
+    http
+      .createServer(async (req, res) => {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        const data = await fsPromises.readFile(
+          path.join(__dirname, "Files", "new.txt"),
+          "utf-8"
+        );
+        res.write(data);
+        console.log(data);
+        res.end();
+      })
+      .listen(8000, () => {
+        console.log("server is running on port 8000");
+      });
+    // fsPromises.rename(
+    //   path.join(__dirname, "Files", "new.txt"),
+    //   path.join(__dirname, "Files", "renamed.txt")
+    // );
+    // console.log("renamed");
   } catch (err) {
     console.error(err);
   }
