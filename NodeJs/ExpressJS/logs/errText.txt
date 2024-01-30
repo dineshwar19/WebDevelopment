@@ -2,3 +2,8 @@ Error	Not allowed by CORS
 Error	Not allowed by CORS
 Error	Not allowed by CORS
 Error	Not allowed by CORS
+Error	Can't set headers after they are sent.
+Error	Can't set headers after they are sent.
+Error	Not allowed by CORS
+Error	Not allowed by CORS
+Error	Not allowed by CORS

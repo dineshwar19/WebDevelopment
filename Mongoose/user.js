@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   name: String,
   age: Number,
 });
-
+ 
 // add function to a schema
 userSchema.methods.greet = function () {
   console.log(`Hi user ${this.name}`);
@@ -14,7 +14,7 @@ userSchema.methods.greet = function () {
 //own data query function
 userSchema.statics.findByAge = function (age) {
   return this.where({ age: age });
-};
+}; 
 
 userSchema.query.byName = function (name) {
   return this.where({ name: new RegExp(name, "i") });

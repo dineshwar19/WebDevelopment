@@ -15,13 +15,29 @@ const data = require("../data/employees.json");
   ]
 }*/
 
+// const saveData = () => {
+//   fs.writeFileSync(
+//     path.join(__dirname, "..", "data", "employees.json"),
+//     JSON.stringify(data, null, 2),
+//     "utf8"
+//   );
+// };
+
 const saveData = () => {
-  fs.writeFileSync(
+  fs.writeFile(
     path.join(__dirname, "..", "data", "employees.json"),
     JSON.stringify(data, null, 2),
-    "utf8"
+    "utf8",
+    (err) => {
+      if (err) {
+        console.error("Error writing file:", err);
+      } else {
+        console.log("File written successfully.");
+      }
+    }
   );
 };
+
 // chaining of the CRUD operation
 
 router
@@ -81,7 +97,7 @@ router
   });
 
 router.route("/:id").get((req, res) => {
-  res.json({ id: req.params.id }); // req.params ex.: '/users/:id' it capture the id .
+  res.json(data.employees[req.params.id - 1]); // req.params ex.: '/users/:id' it capture the id .
 });
 
 module.exports = router;

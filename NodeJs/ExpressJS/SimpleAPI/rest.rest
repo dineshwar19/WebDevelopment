@@ -15,7 +15,7 @@ PUT http://localhost:8000/employees
 Content-Type: application/json
 
 {
-    "id" : 3,
+    "id" : 2,
     "firstName" : "Dineshwar",
     "lastName" : "sddd"
 }
@@ -26,5 +26,8 @@ DELETE http://localhost:8000/employees
 Content-Type: application/json
 
 {
-    "id" : 4
+    "id" : 2
 }
+###
+
+GET http://localhost:8000/employees/1

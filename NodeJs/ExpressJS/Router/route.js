@@ -5,6 +5,8 @@ const subDir = require("./Route/subDir");
 const path = require("path");
 // Set up your routes
 
+
+// Serving static files from the "public" directory
 app.use("/subDir", express.static(path.join(__dirname, "..", "public")));
 app.use("/", express.static(path.join(__dirname, "..", "public")));
 

@@ -8,7 +8,7 @@ const errorHandler = require("./Middleware/errorHandler");
 
 // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 // npm install cors
-//user Defined middleware to log the changes occur in the url in the logs folder
+// user Defined middleware to log the changes occur in the url in the logs folder
 // but when using cors , The server public to all . It causes the attacks etc . so it is neccessary to provide accessibility to cors by defining accessible url (whitelist url)
 // function for cors URLS options:
 const whitelist = [
@@ -29,6 +29,8 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions)); //CORS - Cross Origin Resourse Sharing , which is used to share third party resource, used when the server is accessed by other third party url , then it will shows in the req.headers.origin
+
+
 app.use((req, res, next) => {
   logEvents(
     `${req.method}\t${req.url}\t${req.headers.origin}\n`,
@@ -43,11 +45,10 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, "/public"))); //used to provide static content to the web page priorly.
 //in this file the /index provide index.html to the browser . the index.html needs index.css , but the css file is not provided with the index.html so it is provided by static method
 
-
 // Routing
 app.get("^/$|/index(.html)?", (req, res) => {
   //if we give either / or /index.html it shows only index.html file ,because we use reg exp ^/$ | /index.html
-  //   if sometime client may use /index instead of /index.html.so we use reg exp to resolve the issue by /index(.html)? which means either .html or not it give the same file
+  // if sometime client may use /index instead of /index.html.so we use reg exp to resolve the issue by /index(.html)? which means either .html or not it give the same file
   res.sendFile(path.join(__dirname, "src", "index.html"));
 });
 
